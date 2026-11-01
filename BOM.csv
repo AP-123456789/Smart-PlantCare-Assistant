@@ -1,0 +1,11 @@
+Reference,Quantity,Component,Description,Value / Model,PCB footprint / connection,Notes
+U1,1,Seeed Studio XIAO RP2040,Microcontroller development board,XIAO RP2040,XIAO RP2040 SMD footprint,Main controller; USB powered
+J1,1,AHT20 sensor module,Temperature and relative humidity sensor module,AHT20,4-pin connector/header on PCB,"Module connects to 3.3V, GND, SDA, SCL"
+J2,1,0.96-inch OLED display module,"SSD1306 I2C OLED, 128x64",SSD1306,4-pin connector/header on PCB,"Module connects to 3.3V, GND, SDA, SCL"
+J3,1,Capacitive soil moisture sensor,3-pin capacitive soil moisture sensor module,Analog output,3-pin connector/header on PCB,"Connect VCC, GND and analog output"
+D1,1,Red LED,Alert indicator LED,Red,Through-hole LED footprint,Current-limiting resistor R1
+D2,1,Green LED,Normal-status indicator LED,Green,Through-hole LED footprint,Current-limiting resistor R2
+"R1, R2",2,Resistor,LED current-limiting resistor,220 ohm,Through-hole resistor footprint,One resistor in series with each LED
+SW1,1,Tactile push button,OLED page-selection button,Momentary push button,Through-hole tactile switch footprint,Firmware uses internal pull-up
+C1,1,Ceramic capacitor,Power-supply decoupling capacitor,100 nF,Through-hole capacitor footprint,Across 3.3V and GND
+C2,1,Electrolytic capacitor,Power-supply filtering capacitor,10 uF,Polarized through-hole capacitor footprint,Observe polarity; across 3.3V and GND
