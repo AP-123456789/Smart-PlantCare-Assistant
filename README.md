@@ -2,17 +2,41 @@
 
 The **Smart Plant Care Assistant** is a plant-monitoring system built around the Seeed Studio XIAO RP2040 microcontroller. It monitors soil moisture, ambient temperature, and humidity, presenting real-time telemetry on an SSD1306 OLED display with visual status alerts via red and green LEDs. A push-button switch allows seamless navigation between multiple display pages.
 
+
 ## Project Design & Development Overview
 
 1. **Schematic & Component Selection:** Designed in KiCad using the Seeed Studio XIAO RP2040 core. Wired analog soil moisture sensing, shared I2C bus lines for the AHT20 sensor and SSD1306 OLED display, dual-LED indicators with current-limiting resistors, and a debounced push button.
 
+<img width="552" height="271" alt="image" src="https://github.com/user-attachments/assets/3f45c4fb-1e09-4d20-a871-d74c11b90ef4" />
+
+
 2. **Rules Checking & Footprints:** Configured `PWR_FLAG` symbols and No Connect markers to pass KiCad Electrical Rules Check (ERC) with zero errors. Mapped custom physical footprints for all surface-mount and through-hole components.
+   
+<img width="550" height="280" alt="image" src="https://github.com/user-attachments/assets/f3fed0dd-e02c-4714-97e8-f6e11d192b1a" /><br>
+
+<img width="550" height="282" alt="image" src="https://github.com/user-attachments/assets/c06a18b7-56ad-4ff4-b07a-553fb9bbc331" />
+
+
 
 3. **PCB Layout & Routing:** Built a dual-layer PCB with routed power, ground, and signal traces, decoupling capacitors (`C1`, `C2`), and clean `Edge.Cuts` boundary outlines. Cleared all 19 Design Rules Check (DRC) clearance and text height warnings.
 
-4. **Manufacturing Preparation:** Generated and verified production Gerber layers, Excellon drill files, and 3D render outputs using KiCad Gerber Viewer.
+   <img width="556" height="292" alt="image" src="https://github.com/user-attachments/assets/94a31a61-b1b8-4a96-b918-304c1fcb3f2a" /><br>
 
-5. **Firmware Development:** Written in C++ using Visual Studio Code and PlatformIO under the Arduino framework. Integrated Adafruit driver libraries (`AHTX0`, `SSD1306`, `GFX`), implemented low moisture (<30%) and high temp (>35°C) alert logic, and added multi-page OLED UI toggling.
+   <img width="553" height="283" alt="image" src="https://github.com/user-attachments/assets/006a9bf9-ccfc-4888-b801-aed2463b8d67" />
+
+
+
+5. **Manufacturing Preparation:** Generated and verified production Gerber layers, Excellon drill files, and 3D render outputs using KiCad Gerber Viewer.
+
+   <img width="511" height="291" alt="image" src="https://github.com/user-attachments/assets/d70fa2f1-4c24-42db-9080-9267cc28ccec" />
+
+
+6 . **Firmware Development:** Written in C++ using Visual Studio Code and PlatformIO under the Arduino framework. Integrated Adafruit driver libraries (`AHTX0`, `SSD1306`, `GFX`), implemented low moisture (<30%) and high temp (>35°C) alert logic, and added multi-page OLED UI toggling.
+
+<img width="527" height="291" alt="image" src="https://github.com/user-attachments/assets/6d3035d6-5b0d-462d-9d42-165b14d401f0" />
+<img width="528" height="138" alt="image" src="https://github.com/user-attachments/assets/06ac22db-1ecb-4792-ae97-f1c6cfc391d2" />
+
+
 
 ## Key Features
 
@@ -48,15 +72,6 @@ All electronic components, hardware, and prototyping boards are sourced from a s
 | **10** | 10 µF Polarized Capacitor | C2 | 1 | \$0.25 | \$0.25 | Adafruit | [Adafruit Product 2195](https://www.adafruit.com/product/2195) | 
 | **11** | Perma-Proto Custom PCB Board | PCB | 1 | \$2.95 | \$2.95 | Adafruit | [Adafruit Product 1609](https://www.adafruit.com/product/1609) | 
 
-### Cost Breakdown Summary
-
-* **Adafruit Hardware & Components Subtotal:** \$22.70
-
-* **Estimated Consolidated Shipping (USPS Ground):** \$4.75
-
-* **Estimated Taxes:** \$1.80
-
-* **TOTAL PROJECT COST:** **\$29.25**
 
 ## Hardware Pinout and Schematic Mapping
 
